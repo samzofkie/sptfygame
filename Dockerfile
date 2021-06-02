@@ -1,18 +1,25 @@
 # syntax=docker/dockerfile:1
-FROM ruby:2.5
-RUN apt-get update -qq && apt-get install -y nodejs
-WORKDIR /app
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-RUN bundle install
-COPY . .
-
-# Add a script to be executed every time the container starts.
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3001
-
-# Configure the main process to run when running the image
-CMD ["rails", "server", "-b", "0.0.0.0"]
+FROM ruby:3.0
+RUN apt-get update -qq && apt-get install -y nodejs npm
+#RUN npm i npm@latest -g
+#
+#RUN node --version
+#RUN npm --version
+##RUN npm i -g yarn
+##RUN yarn --version
+#
+#WORKDIR /app
+#COPY Gemfile /app/Gemfile
+#COPY Gemfile.lock /app/Gemfile.lock
+#RUN bundle install
+#COPY . .
+#
+## Add a script to be executed every time the container starts.
+#COPY entrypoint.sh /usr/bin/
+#RUN chmod +x /usr/bin/entrypoint.sh
+#ENTRYPOINT ["entrypoint.sh"]
+#EXPOSE 3001
+#
+## Configure the main process to run when running the image
+#CMD ["rails", "server", "-b", "0.0.0.0"]
 
