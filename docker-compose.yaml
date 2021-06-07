@@ -2,10 +2,12 @@ version: "3.9"
 services:
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
+    #command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && ./bin/webpack-dev-server"
     volumes:
       - .:/app
     ports:
       - "3001:3001"
+      - "3035:3035"
     env_file:
       - ./.env
