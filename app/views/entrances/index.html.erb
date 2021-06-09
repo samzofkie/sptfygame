@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= javascript_tag do %>
+      let auth_uri = "<%= @auth_uri %>"
+    <% end %>
+    <%= javascript_pack_tag 'index' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

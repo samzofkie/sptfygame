@@ -31,6 +31,6 @@ end
 
 class EntrancesController < ApplicationController
   def index
-    #@auth_uri = AuthUriConstructor.new.auth_uri
+    @auth_uri = AuthUriConstructor.new.auth_uri
   end
 end

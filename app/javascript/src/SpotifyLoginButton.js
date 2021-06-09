@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
+import { UriContext } from "../packs/index"
 
 export default function SpotifyLoginButton() {
+    const auth_uri = useContext(UriContext)
     return(
-        <button type="button" className={'spotify-login-button'} > LOG IN TO SPOTIFY*, DONT B AFRIAD &#128514;</button>
+        <a className={"spotify-login-button"} href={ auth_uri }> 
+            LOG IN TO SPOTIFY*, DONT B AFRIAD &#128514;</a>
     )
 }

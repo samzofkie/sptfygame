@@ -10,21 +10,33 @@ path {
 text {
     font-family: 'Lora', serif;
     fill: white;
-    font-size: 20px;
+    font-size: 30px;
     letter-spacing: 8px;
 }
 
-.spotify-login-button {
+a.spotify-login-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+
     font-family: "Montserrat", sans-serif;
     background-color: #36c25b;
     color: White;
+    width: max-content;
     padding: 20px 100px;
     border: None;
     border-radius: 100px;
     font-size: 30px;
+    transition: background-color 1s;
 }
 
-.spotify-login-button, svg {
+a.spotify-login-button:hover {
+    background-color: #41e86e;
+}
+
+a.spotify-login-button, svg {
     display: block;
     margin: auto;
 } 
