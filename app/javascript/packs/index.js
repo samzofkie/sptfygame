@@ -1,13 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {render} from 'react-dom'
 
-import SpotifyLoginButton from "../src/SpotifyLoginButton"
-
-//ReactDOM.render( <SpotifyLoginButton /> )
+import App from "../src/App"
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <SpotifyLoginButton/>,
+  render( <App />,
     document.body.appendChild(document.createElement('div')),
   )
 })
