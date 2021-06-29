@@ -1,7 +1,7 @@
-# sptfygame
+# The Spotify Game! The Spotify Used CD Pile!
 
-Ok the REDIRECT_URI and CLIENT_ID gotta b an env vars ok or smthn ... this a deployment thought
+Hodwy! Ok so:
 
-current runtime architecture idea:
-![this did not work](runtime_arch.jpg)
-
+Current runtime architecture idea:
+/*![this did not work](runtime_arch.jpg)*/
+<img src="runtime_arch.jpg" width="100">
