@@ -3,5 +3,16 @@
 Hodwy! Ok so:
 
 Current runtime architecture idea:
-/*![this did not work](runtime_arch.jpg)*/
-<img src="runtime_arch.jpg" width="100">
+
+<img src="runtime_arch.jpg">
+
+On the initial GET /, we generate 
+* random ID (primary key)
+* code verifier
+* code challenge
+* state (anti cross-site request forgery attacks ([RFC-6749](https://datatracker.ietf.org/doc/html/rfc6749#section-10.12)))
+
+to construct an Authorization URI for this new user. We then throw all of those things into our `users` table, which looks like:
+
+| `id` | `code_verifier` | `code_challenge` | `state` | `code` | `access_token` | `token_expiration` | `refresh_token` |
+|------|-----------------|------------------|---------|--------|----------------|--------------------|-----------------|
