@@ -8,13 +8,13 @@ RUN npm i -g yarn
 WORKDIR /app
 RUN yarn set version berry
 
-COPY server/Gemfile /app/Gemfile
-COPY server/Gemfile.lock /app/Gemfile.lock
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 COPY . .
 
 # Add a script to be executed every time the container starts.
-COPY server/entrypoint.sh /usr/bin/
+COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3001

@@ -14,5 +14,5 @@ On the initial GET /, we generate
 
 to construct an Authorization URI for this new user. We then throw all of those things into our `users` table, which looks like:
 
-| `id` | `code_verifier` | `code_challenge` | `state` | `access_token` | `access_expiration` | `refresh_token` |
-|------|-----------------|------------------|---------|----------------|---------------------|-----------------|
+| `id` | `code_verifier` | `code_challenge` | `state` | `code` | `access_token` | `token_expiration` | `refresh_token` |
+|------|-----------------|------------------|---------|--------|----------------|--------------------|-----------------|
